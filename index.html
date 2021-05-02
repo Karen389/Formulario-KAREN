@@ -120,7 +120,7 @@
 
     <div class="row g-5 justify-content-center">
       <div class="col-md-8 col-lg-8 ">
-        <form id="myform" action="enviar_email.php" class="needs-validation" novalidate>
+        <form id="myform"  class="needs-validation" novalidate>
           <div class="row g-3">
             <div class="col-sm-6">
               <label for="firstName" class="form-label">Nombre</label>
@@ -141,7 +141,7 @@
             <div class="col-12">
               <label for="username" class="form-label">Identidad</label>
               <div class="input-group has-validation">
-                <input type="text" class="form-control" id="id" name="id" placeholder="Username" required>
+                <input type="text" class="form-control" id="id" name="id" placeholder="0000-0000-00000" required>
               <div class="invalid-feedback">
                   Su numero de identidad es requerido.
                 </div>
@@ -173,7 +173,7 @@
           </div>
           <hr class="my-4">
 
-          <button class="w-100 btn btn-primary btn-lg" type="submit" id="enviar">Registrarme</button>
+          <button class="w-100 btn btn-primary btn-lg" type="button" id="enviar">Registrarme</button>
         </form>
       </div>
     </div>
@@ -200,7 +200,7 @@
     $("#enviar").click(function(){
         $.ajax({
             type:"POST",
-            url:form.attr("action"),
+            url:"enviar_email.php",
             data:form.serialize(),
             success: function(response){
                 console.log("se envio el correo");  
