@@ -196,15 +196,14 @@
       <script src="form-validation.js"></script>
 
       <script>
-        var form=$("#myform").serialize();
+        var form=$("#myform");
     $("#enviar").click(function(){
         $.ajax({
             type:"POST",
             url:"enviar_emai.php",
-            data:form,
-            dataType:"html",
-                        success: function(response){
-                console.log("se envio el correo");  
+            data:form.serialize(),
+            success: function(response){
+                console.log(response);  
             }
         });
     });
