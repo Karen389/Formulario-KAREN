@@ -1,7 +1,7 @@
 <?php
 if (isset($_POST)) {
     // Multiple recipients
-    $to = $_POST("email"); // note the comma
+    $to = $_POST["email"]; // note the comma
 
     // Subject
     $subject = 'Registro en la Plataforma';
@@ -13,7 +13,7 @@ if (isset($_POST)) {
   <title>Registro en la Plataforma</title>
 </head>
 <body>
-  <h2>Hola, ' . $_POST("firstName") . ' ' . $_POST("lastName") . '</h2>
+  <h2>Hola, ' . $_POST["firstName"] . ' ' . $_POST["lastName"] . '</h2>
   
   <hr>
   <hr>
